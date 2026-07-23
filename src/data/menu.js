@@ -1,6 +1,8 @@
 // Duke menu content (es/en). Keep category IDs aligned with MenuSection tabs.
 
-const BASE_URL = import.meta.env.BASE_URL;
+const BASE_URL = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 
 export const IMG = {
   burger: `${BASE_URL}image/burgerfoto.jpg`,

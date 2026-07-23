@@ -1,11 +1,14 @@
 ---
 import { restaurant } from '../data/site.js';
+const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 ---
 <section id="find" class="relative overflow-hidden bg-ink px-5 py-20 text-cream md:px-8 md:py-28">
   <div class="relative z-10 mx-auto grid max-w-5xl gap-14 md:grid-cols-2">
     <div>
       <div class="mb-4 flex items-center gap-4">
-        <img src={`${import.meta.env.BASE_URL}logo/logowhite.png`} alt="" class="section-kicker-logo section-kicker-logo-white" aria-hidden="true" />
+        <img src={`${baseUrl}logo/logowhite.png`} alt="" class="section-kicker-logo section-kicker-logo-white" aria-hidden="true" />
         <span class="font-mark text-lg text-rust">
           <span data-i18n="es">ven a duke</span><span data-i18n="en">come to duke</span>
         </span>
@@ -39,7 +42,7 @@ import { restaurant } from '../data/site.js';
 
     <div>
       <div class="mb-4 flex items-center gap-4">
-        <img src={`${import.meta.env.BASE_URL}logo/logowhite.png`} alt="" class="section-kicker-logo section-kicker-logo-white" aria-hidden="true" />
+        <img src={`${baseUrl}logo/logowhite.png`} alt="" class="section-kicker-logo section-kicker-logo-white" aria-hidden="true" />
         <span class="font-mark text-lg text-rust">
           <span data-i18n="es">horario</span><span data-i18n="en">hours</span>
         </span>
