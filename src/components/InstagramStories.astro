@@ -19,18 +19,30 @@ import { GALLERY } from '../data/menu.js';
       </a>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-      {GALLERY.map((story) => (
-        <a href={restaurant.instagram} target="_blank" rel="noopener noreferrer" class="duke-gallery-card focus-ring">
-          <img src={story.img} alt={story.caption.es} loading="lazy" />
-          <svg class="duke-gallery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <rect x="3" y="3" width="18" height="18" rx="5" />
-            <circle cx="12" cy="12" r="4" />
-            <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
-          </svg>
-          <span class="duke-gallery-caption"><span data-i18n="es">{story.caption.es}</span><span data-i18n="en">{story.caption.en}</span></span>
-        </a>
-      ))}
+    <div class="ig-slider" id="ig-slider">
+      <div class="ig-track" id="ig-track">
+        {GALLERY.map((story) => (
+          <a href={restaurant.instagram} target="_blank" rel="noopener noreferrer" class="duke-gallery-card ig-story-card focus-ring">
+            <img src={story.img} alt={story.caption.es} loading="lazy" />
+            <svg class="duke-gallery-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none" />
+            </svg>
+            <span class="duke-gallery-caption"><span data-i18n="es">{story.caption.es}</span><span data-i18n="en">{story.caption.en}</span></span>
+          </a>
+        ))}
+      </div>
+      <div class="ig-dots" id="ig-dots" aria-label="Instagram slider pagination">
+        {GALLERY.map((_, idx) => (
+          <button
+            type="button"
+            class={`ig-dot ${idx === 0 ? 'is-active' : ''}`}
+            data-ig-dot={idx}
+            aria-label={`Go to story ${idx + 1}`}
+          ></button>
+        ))}
+      </div>
     </div>
   </div>
 </section>

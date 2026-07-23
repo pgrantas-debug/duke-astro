@@ -313,6 +313,72 @@ function renderStories() {
   refreshScrollReveal(storiesRoot);
 }
 
+function initInstagramSlider() {
+  const track = document.getElementById('ig-track');
+  const dotsRoot = document.getElementById('ig-dots');
+  if (!track || !dotsRoot) return;
+
+  const cards = Array.from(track.querySelectorAll('.ig-story-card'));
+  const dots = Array.from(dotsRoot.querySelectorAll('[data-ig-dot]'));
+  if (!cards.length || !dots.length) return;
+
+  const setActiveDot = (index) => {
+    dots.forEach((dot, idx) => {
+      dot.classList.toggle('is-active', idx === index);
+      dot.setAttribute('aria-current', idx === index ? 'true' : 'false');
+    });
+  };
+
+  const scrollToCard = (index, smooth = false) => {
+    const target = cards[index];
+    if (!target) return;
+    target.scrollIntoView({
+      behavior: smooth ? 'smooth' : 'auto',
+      inline: 'center',
+      block: 'nearest',
+    });
+  };
+
+  if (track.dataset.igInit !== '1') {
+    dotsRoot.addEventListener('click', (event) => {
+      const dot = event.target.closest('[data-ig-dot]');
+      if (!dot) return;
+      const index = Number(dot.dataset.igDot);
+      if (Number.isNaN(index)) return;
+      setActiveDot(index);
+      scrollToCard(index, true);
+    });
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const index = cards.indexOf(entry.target);
+            if (index >= 0) setActiveDot(index);
+          });
+        },
+        {
+          root: track,
+          threshold: 0.7,
+        }
+      );
+
+      cards.forEach((card) => observer.observe(card));
+    }
+
+    track.dataset.igInit = '1';
+  }
+
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    const middleIndex = Math.floor(cards.length / 2);
+    setActiveDot(middleIndex);
+    scrollToCard(middleIndex, false);
+  } else {
+    setActiveDot(0);
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Cart state + drawer
 // ---------------------------------------------------------------------------
@@ -502,4 +568,5 @@ sendSmsBtn?.addEventListener('click', () => {
 renderMenu();
 renderStories();
 renderCart();
+initInstagramSlider();
 refreshScrollReveal();
