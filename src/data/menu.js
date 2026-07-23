@@ -1,9 +1,11 @@
 // Duke menu content (es/en). Keep category IDs aligned with MenuSection tabs.
 
+const BASE_URL = import.meta.env.BASE_URL;
+
 export const IMG = {
-  burger: '/image/burgerfoto.jpg',
-  plate: '/image/main.jpg',
-  vibe: '/image/dukestyle.png',
+  burger: `${BASE_URL}image/burgerfoto.jpg`,
+  plate: `${BASE_URL}image/main.jpg`,
+  vibe: `${BASE_URL}image/dukestyle.png`,
 };
 
 export const MENU = {
@@ -120,11 +122,11 @@ export const MENU = {
 
 export const STORIES = [
   { img: IMG.burger, caption: { es: 'Hora de burgers', en: 'Burger time' }, video: false },
-  { img: '/image/tapas.jpg', caption: { es: 'Tapas & más', en: 'Tapas and more' }, video: false },
+  { img: `${BASE_URL}image/tapas.jpg`, caption: { es: 'Tapas & más', en: 'Tapas and more' }, video: false },
   { img: IMG.vibe, caption: { es: 'Duke vibes', en: 'Duke vibes' }, video: true },
-  { img: '/image/topsellers.jpg', caption: { es: 'Los más pedidos', en: 'Top sellers' }, video: false },
+  { img: `${BASE_URL}image/topsellers.jpg`, caption: { es: 'Los más pedidos', en: 'Top sellers' }, video: false },
   { img: IMG.plate, caption: { es: 'Ambiente Sabinillas', en: 'Sabinillas mood' }, video: false },
-  { img: '/image/seeyouatduke.jpg', caption: { es: 'Nos vemos en Duke', en: 'See you at Duke' }, video: true },
+  { img: `${BASE_URL}image/seeyouatduke.jpg`, caption: { es: 'Nos vemos en Duke', en: 'See you at Duke' }, video: true },
 ];
 
 export const GALLERY = STORIES;

@@ -8,7 +8,7 @@ interface Props {
   caption?: string;
 }
 const {
-  src = '/videos/hero-story.mp4',
+  src = `${import.meta.env.BASE_URL}videos/hero-story.mp4`,
   poster,
   caption,
 } = Astro.props;

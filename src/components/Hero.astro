@@ -52,7 +52,7 @@ import PhoneMockup from './PhoneMockup.astro';
     </div>
 
     <div class="hero-phone-wrap relative flex justify-start md:items-center md:justify-center">
-      <PhoneMockup src="/videos/hero-story.mp4" caption="@duke.sabinillas" />
+      <PhoneMockup src={`${import.meta.env.BASE_URL}videos/hero-story.mp4`} caption="@duke.sabinillas" />
       <span class="hero-phone-tag font-body absolute rounded-full border border-amber/40 bg-ink/88 px-4 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-cream shadow-[0_18px_45px_rgba(0,0,0,0.45)] backdrop-blur-sm md:text-xs">
         <span data-i18n="es">Duke vibes</span><span data-i18n="en">Duke vibes</span>
       </span>
