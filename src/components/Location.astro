@@ -1,0 +1,66 @@
+---
+import { restaurant } from '../data/site.js';
+---
+<section id="find" class="relative overflow-hidden bg-ink px-5 py-20 text-cream md:px-8 md:py-28">
+  <div class="relative z-10 mx-auto grid max-w-5xl gap-14 md:grid-cols-2">
+    <div>
+      <div class="mb-4 flex items-center gap-4">
+        <img src="/logo/logowhite.png" alt="" class="section-kicker-logo section-kicker-logo-white" aria-hidden="true" />
+        <span class="font-mark text-lg text-rust">
+          <span data-i18n="es">ven a duke</span><span data-i18n="en">come to duke</span>
+        </span>
+      </div>
+      <h2 class="font-display text-4xl leading-none md:text-6xl">
+        <span data-i18n="es">CÓMO LLEGAR</span><span data-i18n="en">FIND US</span>
+      </h2>
+      <div class="mt-8 space-y-1 font-body text-lg text-cream/80">
+        <p>{restaurant.address.line1}</p>
+        <p>{restaurant.address.line2}</p>
+        <p>{restaurant.address.line3}</p>
+      </div>
+      <a
+        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(restaurant.address.mapsQuery)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="focus-ring mt-5 inline-flex items-center gap-2 font-body text-sm font-semibold uppercase tracking-wider text-rust transition-colors hover:text-cream"
+      >
+        <span data-i18n="es">Ver en Google Maps</span><span data-i18n="en">View on Google Maps</span>
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="mt-10 border-t border-cream/10 pt-8">
+        <p class="font-body text-sm uppercase tracking-wider text-cream/40">
+          <span data-i18n="es">Llámanos</span><span data-i18n="en">Call us</span>
+        </p>
+        <a href={`tel:${restaurant.phone.replace(/\s/g, '')}`} class="focus-ring mt-1 block font-display text-2xl text-cream hover:text-rust">
+          {restaurant.phone}
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div class="mb-4 flex items-center gap-4">
+        <img src="/logo/logowhite.png" alt="" class="section-kicker-logo section-kicker-logo-white" aria-hidden="true" />
+        <span class="font-mark text-lg text-rust">
+          <span data-i18n="es">horario</span><span data-i18n="en">hours</span>
+        </span>
+      </div>
+      <h2 class="font-display text-4xl leading-none md:text-6xl">
+        <span data-i18n="es">ABIERTO TODOS LOS DÍAS</span><span data-i18n="en">OPEN DAILY</span>
+      </h2>
+      <ul class="mt-8 space-y-4">
+        {restaurant.hours.map((slot) => (
+          <li class="flex items-center justify-between border-b border-cream/10 pb-4">
+            <span class="font-body text-sm uppercase tracking-wider text-cream/50">
+              <span data-i18n="es">{slot.es}</span><span data-i18n="en">{slot.en}</span>
+            </span>
+            <span class="font-display text-xl md:text-2xl text-cream">{slot.time}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-5 font-body text-sm text-cream/50">
+        <span data-i18n="es">Horario sujeto a temporada. Confirma por teléfono o Instagram.</span>
+        <span data-i18n="en">Opening times may vary seasonally. Confirm by phone or Instagram.</span>
+      </p>
+    </div>
+  </div>
+</section>

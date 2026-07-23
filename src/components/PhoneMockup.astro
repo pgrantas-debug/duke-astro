@@ -1,0 +1,38 @@
+---
+// Ultra-realistic phone frame around a looping, muted video.
+// Drop your exported Instagram clip at /public/videos/hero-story.mp4
+// (or pass a different `src`). Keep it vertical (9:16) for best fit.
+interface Props {
+  src?: string;
+  poster?: string;
+  caption?: string;
+}
+const {
+  src = '/videos/hero-story.mp4',
+  poster,
+  caption,
+} = Astro.props;
+---
+<div class="phone-mockup">
+  <span class="phone-side-btn btn-power"></span>
+  <span class="phone-side-btn btn-vol-up"></span>
+  <span class="phone-side-btn btn-vol-down"></span>
+  <span class="phone-side-btn btn-silent"></span>
+
+  <div class="phone-screen">
+    <span class="phone-notch"></span>
+
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      poster={poster}
+      preload="metadata"
+    >
+      <source src={src} type="video/mp4" />
+    </video>
+
+    {caption && <span class="phone-caption">{caption}</span>}
+  </div>
+</div>

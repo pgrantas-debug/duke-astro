@@ -1,0 +1,13 @@
+---
+// Signature motif: simplified line-drawing of the bull horns from the logo.
+// Reused as dividers, header mark, and hero background art.
+interface Props {
+  class?: string;
+  color?: string;
+}
+const { class: className = '', color = 'currentColor' } = Astro.props;
+---
+<svg class={className} viewBox="0 0 200 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path d="M18 6C20 26 33 37 53 37H85C90 37 93 32 93 27C93 22 90 17 85 17H62" stroke={color} stroke-width="13" stroke-linecap="round"/>
+  <path d="M182 6C180 26 167 37 147 37H115C110 37 107 32 107 27C107 22 110 17 115 17H138" stroke={color} stroke-width="13" stroke-linecap="round"/>
+</svg>

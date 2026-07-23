@@ -1,0 +1,21 @@
+---
+import { restaurant } from '../data/site.js';
+---
+<footer class="relative overflow-hidden bg-cream2 px-5 py-3 md:px-8 md:py-4">
+  <div class="relative z-10 mx-auto grid max-w-6xl gap-3 border-t border-ink/10 pt-4 text-center md:grid-cols-3 md:items-center md:pt-5">
+    <div class="text-ink">
+      <span class="block font-display text-xl tracking-wide">DUKE</span>
+      <span class="mt-1 block font-body text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-stone">
+        Coffee | Food | Drinks
+      </span>
+    </div>
+
+    <p class="font-body text-sm text-stone">
+      {restaurant.address.line1}, {restaurant.address.line2} · {restaurant.phone}
+    </p>
+
+    <a href={restaurant.instagram} target="_blank" rel="noopener noreferrer" class="font-body text-xs text-stone transition-colors hover:text-rust">
+      {restaurant.instagramHandle}
+    </a>
+  </div>
+</footer>

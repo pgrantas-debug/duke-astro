@@ -1,0 +1,71 @@
+---
+---
+<div id="cart-overlay"></div>
+<aside id="cart-drawer" aria-label="Your order / Tu pedido">
+  <div class="flex items-center justify-between border-b border-ink/10 px-5 py-4">
+    <h3 class="font-display text-2xl text-ink">
+      <span data-i18n="es">TU PEDIDO</span><span data-i18n="en">YOUR ORDER</span>
+    </h3>
+    <button id="cart-close" class="focus-ring text-2xl leading-none text-ink/50 hover:text-rust" aria-label="Close cart">&times;</button>
+  </div>
+
+  <div id="cart-items" class="flex-1 overflow-y-auto px-5 py-4"></div>
+
+  <div class="border-t border-ink/10 px-5 py-4 space-y-4">
+    <div class="flex items-center justify-between font-body">
+      <span class="text-sm uppercase tracking-wider text-stone">
+        <span data-i18n="es">Subtotal</span><span data-i18n="en">Subtotal</span>
+      </span>
+      <span id="cart-total" class="font-display text-2xl text-rust">€0</span>
+    </div>
+
+    <div>
+      <label class="mb-1 block font-body text-xs font-semibold uppercase tracking-wider text-stone">
+        <span data-i18n="es">Tipo de pedido</span><span data-i18n="en">Order type</span>
+      </label>
+      <div class="flex gap-2">
+        <button data-order-type="pickup" class="order-type-btn type-active" type="button">
+          <span data-i18n="es">Recoger</span><span data-i18n="en">Pickup</span>
+        </button>
+        <button data-order-type="delivery" class="order-type-btn" type="button">
+          <span data-i18n="es">A domicilio</span><span data-i18n="en">Delivery</span>
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <label class="mb-1 block font-body text-xs font-semibold uppercase tracking-wider text-stone">
+        <span data-i18n="es">Tu nombre</span><span data-i18n="en">Your name</span>
+      </label>
+      <input type="text" id="customer-name" placeholder="ej. Laura" />
+    </div>
+
+    <div id="address-field" style="display:none">
+      <label class="mb-1 block font-body text-xs font-semibold uppercase tracking-wider text-stone">
+        <span data-i18n="es">Dirección de entrega</span><span data-i18n="en">Delivery address</span>
+      </label>
+      <textarea id="customer-address" rows="2" placeholder="Calle, número, piso, ciudad..."></textarea>
+    </div>
+
+    <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+      <button id="send-order-whatsapp" class="focus-ring order-send-btn order-send-btn-primary" type="button">
+        <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.5 14.4c-.3-.1-1.6-.8-1.8-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3 4.8 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.5-.3z"/>
+          <path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.3c1.4.8 3.1 1.2 4.9 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.2-.4-4.6-1.3l-.3-.2-3.2.8.9-3.1-.2-.3C3.7 14.5 3.3 13 3.3 12c0-4.8 3.9-8.7 8.7-8.7s8.7 3.9 8.7 8.7-3.9 8.7-8.7 8.7z"/>
+        </svg>
+        <span data-i18n="es">Enviar por WhatsApp</span><span data-i18n="en">Send via WhatsApp</span>
+      </button>
+
+      <button id="send-order-sms" class="focus-ring order-send-btn order-send-btn-secondary" type="button">
+        <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        <span data-i18n="es">Enviar por SMS</span><span data-i18n="en">Send via SMS</span>
+      </button>
+    </div>
+    <p id="cart-hint" class="font-body text-xs text-stone">
+      <span data-i18n="es">Añade al menos un producto para enviar tu pedido por WhatsApp o SMS.</span>
+      <span data-i18n="en">Add at least one item to send your order via WhatsApp or SMS.</span>
+    </p>
+  </div>
+</aside>

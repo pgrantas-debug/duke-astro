@@ -1,0 +1,49 @@
+---
+---
+<header class="duke-header fixed top-0 z-30 w-full">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-8">
+    <a href="#top" class="focus-ring flex flex-col items-start leading-none">
+      <span class="font-display text-2xl font-bold tracking-wide text-cream md:text-[1.9rem]">DUKE</span>
+      <span class="mt-1 font-body text-[0.58rem] font-semibold uppercase tracking-[0.32em] text-stone md:text-[0.62rem]">
+        Coffee · Food · Drinks
+      </span>
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex">
+      <a href="#menu" class="duke-nav-link focus-ring font-body text-sm font-semibold uppercase tracking-wider">
+        <span data-i18n="es">Carta</span><span data-i18n="en">Menu</span>
+      </a>
+      <a href="#gallery" class="duke-nav-link focus-ring font-body text-sm font-semibold uppercase tracking-wider">
+        <span data-i18n="es">Galería</span><span data-i18n="en">Gallery</span>
+      </a>
+      <a href="#find" class="duke-nav-link focus-ring font-body text-sm font-semibold uppercase tracking-wider">
+        <span data-i18n="es">Cómo llegar</span><span data-i18n="en">Find Us</span>
+      </a>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <button id="lang-toggle" class="lang-toggle focus-ring" type="button">
+        <span data-i18n="es">EN</span><span data-i18n="en">ES</span>
+      </button>
+      <button id="mobile-menu-btn" class="duke-menu-btn focus-ring md:hidden" type="button" aria-label="Menu">
+        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path id="menu-icon-path" d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <button id="cart-fab" class="btn-primary focus-ring !px-4 !py-2 !text-xs" type="button">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span data-i18n="es">Pedido</span><span data-i18n="en">Order</span>
+        <span id="cart-count" class="rounded-full bg-ink/20 px-1.5 text-[0.7rem]">0</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobile-nav">
+    <a href="#menu"><span data-i18n="es">Carta</span><span data-i18n="en">Menu</span></a>
+    <a href="#gallery"><span data-i18n="es">Galería</span><span data-i18n="en">Gallery</span></a>
+    <a href="#find"><span data-i18n="es">Cómo llegar</span><span data-i18n="en">Find Us</span></a>
+  </div>
+</header>

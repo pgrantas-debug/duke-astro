@@ -1,0 +1,61 @@
+---
+import PhoneMockup from './PhoneMockup.astro';
+---
+<section id="top" class="relative flex min-h-[100svh] items-center overflow-hidden bg-ink pt-24 pb-16">
+  <div class="grain-overlay"></div>
+  <div class="warm-glow" aria-hidden="true"></div>
+
+  <div class="absolute inset-0 opacity-[0.14]">
+    <img src="https://images.unsplash.com/photo-1550218585-5a4e6bc59ebb?auto=format&fit=crop&w=1600&q=60" alt="" class="h-full w-full object-cover" />
+    <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/90 to-ink"></div>
+  </div>
+
+  <div class="hero-layout relative z-10 mx-auto grid w-full max-w-6xl px-5 md:items-center md:px-8">
+    <div class="hero-heading-group">
+      <span class="kicker">Sabinillas · Costa del Sol</span>
+
+      <h1 class="mt-3 font-display text-[15vw] font-bold leading-[0.92] text-cream sm:text-7xl md:text-8xl">DUKE</h1>
+      <span class="mt-2 inline-block font-body text-xs font-semibold uppercase tracking-[0.5em] text-stone">
+        Coffee&nbsp;·&nbsp;Food&nbsp;·&nbsp;Drinks
+      </span>
+    </div>
+
+    <div class="hero-copy-body">
+      <p class="hero-body-text mt-6 max-w-md font-body text-base text-cream/70 md:text-lg">
+        <span data-i18n="es">Smash burgers, empanadas argentinas y los mejores cócteles de Sabinillas. Buena música, buen ambiente, buenos momentos.</span>
+        <span data-i18n="en">Smash burgers, Argentinian empanadas and the best cocktails in Sabinillas. Good music, good vibes, good times.</span>
+      </p>
+
+      <div class="hero-cta-row mt-8 flex flex-wrap items-center gap-4">
+        <a href="#menu" class="btn-primary focus-ring">
+          <span data-i18n="es">Ver la carta</span><span data-i18n="en">View Menu</span>
+        </a>
+        <a href="#find" class="btn-ghost focus-ring">
+          <span data-i18n="es">Reservar mesa</span><span data-i18n="en">Reserve a table</span>
+        </a>
+      </div>
+
+      <div class="hero-hours-row mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-cream/50">
+        <span class="flex items-center gap-2">
+          <svg class="h-4 w-4 text-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18V5l12-2v13" stroke-linecap="round" stroke-linejoin="round"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+          </svg>
+          <span data-i18n="es">Música en vivo</span><span data-i18n="en">Live music</span>
+        </span>
+        <span class="flex items-center gap-2">
+          <svg class="h-4 w-4 text-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2 4 7v6c0 5 8 9 8 9s8-4 8-9V7z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Calle Pandora 1
+        </span>
+      </div>
+    </div>
+
+    <div class="hero-phone-wrap relative flex justify-start md:items-center md:justify-center">
+      <PhoneMockup src="/videos/hero-story.mp4" caption="@duke.sabinillas" />
+      <span class="hero-phone-tag font-body absolute rounded-full border border-amber/40 bg-ink/88 px-4 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-cream shadow-[0_18px_45px_rgba(0,0,0,0.45)] backdrop-blur-sm md:text-xs">
+        <span data-i18n="es">Duke vibes</span><span data-i18n="en">Duke vibes</span>
+      </span>
+    </div>
+  </div>
+</section>
